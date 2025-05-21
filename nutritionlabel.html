@@ -265,6 +265,49 @@
     #nutrition-form button[type="submit"] {
       margin-top: 1rem;
     }
+    /* ------------------------------------------------------------------
+       RESPONSIVE BREAKPOINTS
+    ------------------------------------------------------------------ */
+
+    /* Tablet & small laptops: stack fieldsets, 2-column grids */
+    @media (max-width: 1024px) {
+      /* Stack all fieldsets vertically */
+      #nutrition-form fieldset {
+        display: block !important;
+      }
+      /* Collapse four‑column grids to two columns */
+      #nutrition-form > fieldset:nth-of-type(2),
+      #vitamin-fields,
+      #optional-vitamin-fields {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-unit);
+      }
+      .form-card {
+        padding: var(--spacing-unit);
+      }
+    }
+
+    /* Mobile phones: single-column layout */
+    @media (max-width: 600px) {
+      /* All form sections single column */
+      #nutrition-form,
+      #nutrition-form > fieldset:nth-of-type(2),
+      #vitamin-fields,
+      #optional-vitamin-fields {
+        display: block !important;
+      }
+      /* Make inputs, selects, buttons full width */
+      input, select, button {
+        width: 100% !important;
+      }
+      /* Scale label to mobile width */
+      .label-card,
+      .nutrition-label {
+        width: 90vw;
+        max-width: none;
+      }
+    }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
