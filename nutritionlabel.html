@@ -75,10 +75,10 @@
       font-weight: 600;
       color: var(--color-accent);
     }
-    /* Four‐column layout for Calories & Macronutrients */
+    /* Responsive grid for Calories & Macronutrients */
     #nutrition-form > fieldset:nth-of-type(2) {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: var(--spacing-unit);
     }
     /* Ensure the legend spans full width */
